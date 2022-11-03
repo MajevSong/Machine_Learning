@@ -24,7 +24,7 @@ from sklearn.model_selection import train_test_split
 # duracağı kabulü yapılmıştır. Ayrıca X ve Y değişkenleri de numpy dizisi
 # olarak bu dataframe'lerden .values özelliğini alır.
 
-veriler = pd.read_csv("../datas/voice.csv")
+veriler = pd.read_csv("/home/valanis/Desktop/Python/Machine_Learning/datas/voice.csv")
 x = veriler.iloc[:, 0:19]
 x_drop = x.drop(columns=["kurt"])
 y = veriler.iloc[:, -1:]

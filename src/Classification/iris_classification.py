@@ -13,7 +13,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn import metrics
 
 
-veriler = pd.read_csv("../datas/iris.csv")
+veriler = pd.read_csv("/home/valanis/Desktop/Python/Machine_Learning/datas/iris.csv")
 
 x = veriler.iloc[:, 1:4].values  # bağımsız değişkenler
 y = veriler.iloc[:, 4:].values  # bağımlı değişken
@@ -62,7 +62,7 @@ dogruluk_degeri_knn = metrics.accuracy_score(y_test, y_pred_knn)
 
 print("Sınıflandırma raporu \n", metrics.classification_report(y_test, y_pred_logr))
 
-print("knn temel model dogruluk degeri = {}".format(dogruluk_degeri_knn))
+print("logistic temel model dogruluk degeri = {}".format(dogruluk_degeri_knn))
 
 
 # Support Vector Machines Classifier
@@ -79,7 +79,7 @@ dogruluk_degeri_svc = metrics.accuracy_score(y_test, y_pred_svc)
 
 print("Sınıflandırma raporu \n", metrics.classification_report(y_test, y_pred_svc))
 
-print("svc temel model dogruluk degeri = {}".format(dogruluk_degeri_svc))
+print("logistic temel model dogruluk degeri = {}".format(dogruluk_degeri_svc))
 
 
 # Naive Bayes Classifier
@@ -96,7 +96,7 @@ dogruluk_degeri_gnb = metrics.accuracy_score(y_test, y_pred_gnb)
 
 print("Sınıflandırma raporu \n", metrics.classification_report(y_test, y_pred_gnb))
 
-print("gnb temel model dogruluk degeri = {}".format(dogruluk_degeri_gnb))
+print("logistic temel model dogruluk degeri = {}".format(dogruluk_degeri_gnb))
 
 
 # Decision Tree Classifier
@@ -113,7 +113,7 @@ dogruluk_degeri_dtc = metrics.accuracy_score(y_test, y_pred_dtc)
 
 print("Sınıflandırma raporu \n", metrics.classification_report(y_test, y_pred_dtc))
 
-print("dtc temel model dogruluk degeri = {}".format(dogruluk_degeri_dtc))
+print("logistic temel model dogruluk degeri = {}".format(dogruluk_degeri_dtc))
 
 
 # Random Forest Classifier
@@ -129,4 +129,4 @@ dogruluk_degeri_rfc = metrics.accuracy_score(y_test, y_pred_rfc)
 
 print("Sınıflandırma raporu \n", metrics.classification_report(y_test, y_pred_rfc))
 
-print("rfc temel model dogruluk degeri = {}".format(dogruluk_degeri_rfc))
+print("logistic temel model dogruluk degeri = {}".format(dogruluk_degeri_rfc))

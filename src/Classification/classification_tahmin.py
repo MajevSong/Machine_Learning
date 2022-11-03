@@ -19,7 +19,7 @@ from sklearn.metrics import make_scorer, roc_auc_score
 # ------ Logistic Regression ------
 
 
-veriler = pd.read_csv("../datas/voice.csv")
+veriler = pd.read_csv("/home/valanis/Desktop/Python/Machine_Learning/datas/voice.csv")
 x = veriler.iloc[:, 0:19]
 x_drop = x.drop(columns=["kurt"])
 y = veriler.iloc[:, -1:]
@@ -40,7 +40,7 @@ logr = LogisticRegression(random_state=0, max_iter=240)
 # Training data y by x
 logr.fit(X_train, y_train.ravel())  # type: ignore
 
-# tahminicting
+# tahmin
 y_tahmin_logr = logr.predict(X_test)
 
 cm_logr = confusion_matrix(y_test, y_tahmin_logr)
@@ -69,7 +69,7 @@ print(basari_logr.std())
 # ------ K-NN ------
 
 
-# tahminicting
+# tahmin
 knn = KNeighborsClassifier(n_neighbors=5, metric="minkowski").fit(X_train, y_train)
 
 y_tahmin_knn = knn.predict(X_test)
@@ -210,7 +210,6 @@ import matplotlib.pyplot as plt
 plt.plot(range(1, 11), acc_scores)
 plt.xlabel("min_samples_leaf")
 plt.ylabel("Acuracy Scores")
-plt.title("Best leaf for Random Forest Classifier")
 plt.show()
 
 
